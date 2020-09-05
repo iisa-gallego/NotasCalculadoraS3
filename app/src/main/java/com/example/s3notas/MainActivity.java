@@ -68,10 +68,10 @@ private String colorcitos;
                 fondo.setBackgroundColor(Color.rgb(20, 20, 200));
             }
             if (colorcitos.equals("Blanco")) {
-            fondo.setBackgroundColor(Color.rgb(20, 20, 0));
+            fondo.setBackgroundColor(Color.rgb(200, 200, 200));
         }
             if(colorcitos.equals("Negro")) {
-            fondo.setBackgroundColor(Color.rgb(200,200,200));
+            fondo.setBackgroundColor(Color.rgb(0,0,0));
 
         }
 

@@ -45,10 +45,10 @@ public class CalculoActivity extends AppCompatActivity {
             fondocal.setBackgroundColor(Color.rgb(20, 20, 200));
         }
         if (colo.equals("Blanco")) {
-            fondocal.setBackgroundColor(Color.rgb(20, 20, 0));
+            fondocal.setBackgroundColor(Color.rgb(200, 200, 200));
         }
         if(colo.equals("Negro")) {
-            fondocal.setBackgroundColor(Color.rgb(200,200,200));
+            fondocal.setBackgroundColor(Color.rgb(20,20,20));
 
         }
 

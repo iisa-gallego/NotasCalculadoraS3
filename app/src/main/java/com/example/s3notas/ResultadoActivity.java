@@ -42,10 +42,10 @@ public class ResultadoActivity extends AppCompatActivity implements View.OnClick
             fondomu.setBackgroundColor(Color.rgb(20, 20, 200));
         }
         if (col.equals("Blanco")) {
-            fondomu.setBackgroundColor(Color.rgb(20, 20, 0));
+            fondomu.setBackgroundColor(Color.rgb(200, 200, 200));
         }
         if(col.equals("Negro")) {
-            fondomu.setBackgroundColor(Color.rgb(200,200,200));
+            fondomu.setBackgroundColor(Color.rgb(20,20,20));
 
         }
 

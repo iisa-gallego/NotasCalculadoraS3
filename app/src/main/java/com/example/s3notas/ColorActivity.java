@@ -33,10 +33,10 @@ colorcitos = preferencias.getString("colorin","nocolorin");
             fondoc.setBackgroundColor(Color.rgb(20, 20, 200));
         }
         if (colorcitos.equals("Blanco")) {
-            fondoc.setBackgroundColor(Color.rgb(20, 20, 0));
+            fondoc.setBackgroundColor(Color.rgb(200, 200, 200));
         }
         if(colorcitos.equals("Negro")) {
-            fondoc.setBackgroundColor(Color.rgb(200,200,200));
+            fondoc.setBackgroundColor(Color.rgb(20,20,200));
 
         }
 
