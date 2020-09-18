@@ -43,7 +43,6 @@ private String colorcitos;
                     pre.edit().putString("colorin",colorcitos).apply();
 
                     startActivity(i);
-
                 }
         );
         bConfig.setOnClickListener(
@@ -52,7 +51,6 @@ private String colorcitos;
                     preferences.edit().putString("colorin",colorcitos).apply();
                     Intent p = new Intent(this,ColorActivity.class);
                     startActivityForResult(p,11);
-
                 }
         );
 
