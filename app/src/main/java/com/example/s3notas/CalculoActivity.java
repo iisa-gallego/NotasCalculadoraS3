@@ -14,8 +14,8 @@ import android.widget.EditText;
 
 
 public class CalculoActivity extends AppCompatActivity {
-    private EditText editProyecto1;
-    private EditText editProyecto2;
+    private EditText editActividad1;
+    private EditText editActividad2;
     private EditText editQuizz;
     private EditText editParcial1;
     private EditText editParcial2;
@@ -30,8 +30,8 @@ public class CalculoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calculo);
 
 
-        editProyecto1 = findViewById(R.id.editProyecto1);
-        editProyecto2 = findViewById(R.id.editProyecto2);
+        editActividad1 = findViewById(R.id.editProyecto1);
+        editActividad2 = findViewById(R.id.editProyecto2);
         editQuizz = findViewById(R.id. editQuizz);
         editParcial1 = findViewById(R.id.editParcial1);
         editParcial2 = findViewById(R.id.editParcial2);
@@ -40,15 +40,15 @@ public class CalculoActivity extends AppCompatActivity {
         fondocal = findViewById(R.id.fondocal);
 
         SharedPreferences preferencias = getSharedPreferences("buzonColor",MODE_PRIVATE);
-        colo = preferencias.getString("colorin","nocolorin");
-        if (colo.equals("Azul")) {
-            fondocal.setBackgroundColor(Color.rgb(20, 20, 200));
+        colo = preferencias.getString("coloreado","nocoloreado");
+        if (colo.equals("Predeterminado")) {
+            fondocal.setBackgroundColor(Color.rgb(192, 201, 255));
         }
-        if (colo.equals("Blanco")) {
-            fondocal.setBackgroundColor(Color.rgb(200, 200, 200));
+            if (colo.equals("Claro")) {
+            fondocal.setBackgroundColor(Color.rgb(255, 255, 255));
         }
-        if(colo.equals("Negro")) {
-            fondocal.setBackgroundColor(Color.rgb(20,20,20));
+        if(colo.equals("Oscuro")) {
+            fondocal.setBackgroundColor(Color.rgb(110,112,124));
 
         }
 
@@ -60,8 +60,8 @@ public class CalculoActivity extends AppCompatActivity {
 
 
                  (v)->{
-                    String proyecto1 = editProyecto1.getText().toString();
-                     String proyecto2 = editProyecto2.getText().toString();
+                    String proyecto1 = editActividad1.getText().toString();
+                     String proyecto2 = editActividad2.getText().toString();
                      String quizz = editQuizz.getText().toString();
                      String parcial1 = editParcial1.getText().toString();
                      String parcial2 = editParcial2.getText().toString();
@@ -76,12 +76,12 @@ public class CalculoActivity extends AppCompatActivity {
                      double par2 = Double.parseDouble(parcial2);
                      double sem = Double.parseDouble(semanal);
 
-                     double cali = (pro1*0.25)+(pro2*0.25)+(quiz*0.15)+(par1*0.15)+(par2*0.15)+(sem*0.05);
+                     double calif = (pro1*0.25)+(pro2*0.25)+(quiz*0.15)+(par1*0.15)+(par2*0.15)+(sem*0.05);
                      Intent y = new Intent(this,ResultadoActivity.class);
-                     y.putExtra("notas",cali);
+                     y.putExtra("notas",calif);
                      startActivity(y);
 
-                     Log.d("calculo","" + cali);
+                     Log.d("calculo","" + calif);
                      Log.d("notas","" + pro1 );
 
 

@@ -10,58 +10,59 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class ColorActivity extends AppCompatActivity {
-    private Button bAzul;
-    private Button bBlanco;
-    private Button bNegro;
-    private String colorcitos;
+    private Button btnPredet;
+    private Button btnClaro;
+    private Button btnOscuro;
+    private String colores;
     private ConstraintLayout fondoc;
 
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color);
         //Referenciar
-        bAzul = findViewById(R.id.bAzul);
-        bBlanco = findViewById(R.id.bBlanco);
-        bNegro = findViewById(R.id.bNegro);
+        btnPredet = findViewById(R.id.bAzul);
+        btnClaro = findViewById(R.id.bBlanco);
+        btnOscuro = findViewById(R.id.bNegro);
         fondoc = findViewById(R.id.fondoc);
 
         SharedPreferences preferencias = getSharedPreferences("buzonColor",MODE_PRIVATE);
-colorcitos = preferencias.getString("colorin","nocolorin");
-        if (colorcitos.equals("Azul")) {
-            fondoc.setBackgroundColor(Color.rgb(20, 20, 200));
+colores = preferencias.getString("coloreado","nocoloreado");
+        if (colores.equals("Predeterminado")) {
+            fondoc.setBackgroundColor(Color.rgb(192, 201, 255));
         }
-        if (colorcitos.equals("Blanco")) {
-            fondoc.setBackgroundColor(Color.rgb(200, 200, 200));
+        if (colores.equals("Claro")) {
+            fondoc.setBackgroundColor(Color.rgb(255, 255, 255));
         }
-        if(colorcitos.equals("Negro")) {
-            fondoc.setBackgroundColor(Color.rgb(20,20,200));
+        if(colores.equals("Oscuro")) {
+            fondoc.setBackgroundColor(Color.rgb(110,112,124));
 
         }
 
-        bAzul.setOnClickListener(
+        btnPredet.setOnClickListener(
                 (view)-> {
                     Intent i = new Intent();
-                    i.putExtra("color","Azul");
+                    i.putExtra("color","Predeterminado");
                     setResult(RESULT_OK,i);
                     finish();
 
                 }
         );
-        bBlanco.setOnClickListener(
+        btnClaro.setOnClickListener(
                 (view)->{
                     Intent o = new Intent();
-                    o.putExtra("color","Blanco");
+                    o.putExtra("color","Claro");
                     setResult(RESULT_OK,o);
                     finish();
 
                 }
         );
-        bNegro.setOnClickListener(
+        btnOscuro.setOnClickListener(
                 (view)->{
                     Intent p = new Intent();
-                    p.putExtra("color","Negro");
+                    p.putExtra("color","Oscuro");
                     setResult(RESULT_OK,p);
                     finish();
 

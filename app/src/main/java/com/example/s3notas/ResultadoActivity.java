@@ -37,15 +37,15 @@ public class ResultadoActivity extends AppCompatActivity implements View.OnClick
                 fondomu = findViewById(R.id.fondomu);
 
         SharedPreferences preferencias = getSharedPreferences("buzonColor",MODE_PRIVATE);
-        col = preferencias.getString("colorin","nocolorin");
-        if (col.equals("Azul")) {
-            fondomu.setBackgroundColor(Color.rgb(20, 20, 200));
+        col = preferencias.getString("coloreado","nocoloreado");
+        if (col.equals("Predeterminado")) {
+            fondomu.setBackgroundColor(Color.rgb(192, 201, 255));
         }
-        if (col.equals("Blanco")) {
-            fondomu.setBackgroundColor(Color.rgb(200, 200, 200));
+        if (col.equals("Claro")) {
+            fondomu.setBackgroundColor(Color.rgb(255, 255, 255));
         }
-        if(col.equals("Negro")) {
-            fondomu.setBackgroundColor(Color.rgb(20,20,20));
+        if(col.equals("Oscuro")) {
+            fondomu.setBackgroundColor(Color.rgb(110,112,124));
 
         }
 
@@ -53,7 +53,7 @@ public class ResultadoActivity extends AppCompatActivity implements View.OnClick
         DecimalFormat decimales = new DecimalFormat("#.00");
 
         muestraResultado.setText("" + decimales.format( noticas));
-        Log.d("aaaaaaaaa",""+ noticas);
+        Log.d("pasaste",""+ noticas);
 
 
                muestraNombre.setText(nombre);

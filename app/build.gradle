@@ -5,7 +5,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.s3notas"
+        applicationId "com.example.CalculadorNotas"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1

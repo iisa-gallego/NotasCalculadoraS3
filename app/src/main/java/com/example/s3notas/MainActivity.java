@@ -11,12 +11,12 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity  {
-private Button bConfig;
+private Button btnConfig;
 private EditText editNombre;
-private Button bContinuar;
+private Button btnContinuar;
 private ConstraintLayout fondo;
 
-private String colorcitos;
+private String colores;
 
 
 
@@ -24,14 +24,14 @@ private String colorcitos;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //no olvidar referenciar
-        bConfig = findViewById(R.id.bConfig);
+
+        btnConfig = findViewById(R.id.bConfig);
         editNombre = findViewById(R.id.editNombre);
-        bContinuar = findViewById(R.id.bContinuar);
+        btnContinuar = findViewById(R.id.bContinuar);
         fondo = findViewById(R.id.fondoc);
 
 
-        bContinuar.setOnClickListener(
+        btnContinuar.setOnClickListener(
                 (view)-> {
                     String nombre = editNombre.getText().toString();
 
@@ -40,15 +40,15 @@ private String colorcitos;
 
                     i.putExtra("nombre",nombre);
                     SharedPreferences pre = getSharedPreferences("buzonColor",MODE_PRIVATE);
-                    pre.edit().putString("colorin",colorcitos).apply();
+                    pre.edit().putString("coloreado", colores).apply();
 
                     startActivity(i);
                 }
         );
-        bConfig.setOnClickListener(
+        btnConfig.setOnClickListener(
                 (view)-> {
                     SharedPreferences preferences = getSharedPreferences( "buzonColor",MODE_PRIVATE);
-                    preferences.edit().putString("colorin",colorcitos).apply();
+                    preferences.edit().putString("coloreado", colores).apply();
                     Intent p = new Intent(this,ColorActivity.class);
                     startActivityForResult(p,11);
                 }
@@ -60,16 +60,16 @@ private String colorcitos;
         super.onActivityResult(requestCode, resultCode, data);
        if(requestCode == 11 && resultCode == RESULT_OK){
 
-            colorcitos = data.getExtras().getString("color");
+            colores = data.getExtras().getString("color");
 
-            if (colorcitos.equals("Azul")) {
-                fondo.setBackgroundColor(Color.rgb(20, 20, 200));
+            if (colores.equals("Predeterminado")) {
+                fondo.setBackgroundColor(Color.rgb(192, 201, 255));
             }
-            if (colorcitos.equals("Blanco")) {
-            fondo.setBackgroundColor(Color.rgb(200, 200, 200));
+            if (colores.equals("Claro")) {
+            fondo.setBackgroundColor(Color.rgb(255, 255, 255));
         }
-            if(colorcitos.equals("Negro")) {
-            fondo.setBackgroundColor(Color.rgb(0,0,0));
+            if(colores.equals("Oscuro")) {
+            fondo.setBackgroundColor(Color.rgb(110,112,124));
 
         }
 
